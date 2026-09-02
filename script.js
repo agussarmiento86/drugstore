@@ -1,0 +1,512 @@
+const STORAGE_KEY = 'verduleria-data-v3';
+
+const SEED = {
+  storeName: 'El Mercadito',
+  items: [
+    // Verduras
+    { id: '1', name: 'Tomate', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 3500, promoActive: false, promoPrice: 0 },
+    { id: '2', name: 'Papa', emoji: '🥔', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '3', name: 'Cebolla', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '4', name: 'Zanahoria', emoji: '🥕', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '5', name: 'Zapallo Brasilero', emoji: '🎃', category: 'verdura', saleType: 'kg', price: 2600, promoActive: false, promoPrice: 0 },
+    { id: '6', name: 'Lechuga', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '7', name: 'Choclo', emoji: '🌽', category: 'verdura', saleType: 'unit', price: 400, promoActive: false, promoPrice: 0 },
+    { id: '8', name: 'Acelga', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '9', name: 'Palta', emoji: '🥑', category: 'verdura', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
+    { id: '10', name: 'Cebolla de verdeo', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
+    { id: '11', name: 'Espinaca', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '12', name: 'Apio', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 500, promoActive: false, promoPrice: 0 },
+    { id: '13', name: 'Rucula', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 1200, promoActive: false, promoPrice: 0 },
+    { id: '14', name: 'Zapallito verde', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3500, promoActive: false, promoPrice: 0 },
+    { id: '15', name: 'Chaucha', emoji: '🫛', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
+    { id: '16', name: 'Pimiento V', emoji: '🫑', category: 'verdura', saleType: 'kg', price: 5000, promoActive: false, promoPrice: 0 },
+    { id: '17', name: 'Boniato', emoji: '🍠', category: 'verdura', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
+    { id: '18', name: 'Menta', emoji: '🌿', category: 'verdura', saleType: 'unit', price: 1200, promoActive: false, promoPrice: 0 },
+    { id: '19', name: 'Perejil', emoji: '🌿', category: 'verdura', saleType: 'kg', price: 300, promoActive: false, promoPrice: 0 },
+    { id: '20', name: 'Zucchini', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '21', name: 'Cebolla morada', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
+    { id: '22', name: 'Ajo', emoji: '🧄', category: 'verdura', saleType: 'unit', price: 1200, promoActive: false, promoPrice: 0 },
+    { id: '23', name: 'Lechuga hidroponica', emoji: '🥬', category: 'verdura', saleType: 'unit', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '24', name: 'Pimiento', emoji: '🌶️', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
+    { id: '25', name: 'Batata', emoji: '🍠', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
+    { id: '26', name: 'Coreanito', emoji: '🎃', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '27', name: 'Pepino', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '28', name: 'Puerro', emoji: '🧅', category: 'verdura', saleType: 'unit', price: 500, promoActive: false, promoPrice: 0 },
+    { id: '29', name: 'Berenjena', emoji: '🍆', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
+    { id: '30', name: 'Tomate Cherry', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 5000, promoActive: true, promoPrice: 500, promoMinAmount: 0.1 },
+    { id: '31', name: 'Broccoli', emoji: '🥦', category: 'verdura', saleType: 'unit', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '32', name: 'Remolacha', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
+    { id: '33', name: 'Repollo', emoji: '🥬', category: 'verdura', saleType: 'unit', price: 2500, promoActive: false, promoPrice: 0 },
+    { id: '34', name: 'Coliflor', emoji: '🥦', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
+    { id: '35', name: 'Jengibre', emoji: '🫚', category: 'verdura', saleType: 'unit', price: 16000, promoActive: false, promoPrice: 0 },
+
+    // Frutas
+    { id: '36', name: 'Manzana R', emoji: '🍎', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
+    { id: '37', name: 'Banana', emoji: '🍌', category: 'fruta', saleType: 'kg', price: 5600, promoActive: false, promoPrice: 0 },
+    { id: '38', name: 'Naranja', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
+    { id: '39', name: 'Limón', emoji: '🍋', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
+    { id: '40', name: 'Frutilla', emoji: '🍓', category: 'fruta', saleType: 'kg', price: 5100, promoActive: true, promoPrice: 5000, promoMinAmount: 2 },
+    { id: '41', name: 'Kiwi', emoji: '🥝', category: 'fruta', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
+    { id: '42', name: 'Manzana V', emoji: '🍏', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
+    { id: '43', name: 'Mandarina', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
+    { id: '44', name: 'Pomelo', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
+    { id: '45', name: 'Pera', emoji: '🍐', category: 'fruta', saleType: 'kg', price: 4500, promoActive: false, promoPrice: 0 },
+    { id: '46', name: 'Sandia', emoji: '🍉', category: 'fruta', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
+    { id: '47', name: 'Arandano', emoji: '🫐', category: 'fruta', saleType: 'unit', price: 4500, promoActive: false, promoPrice: 0 },
+  ]
+};
+
+let state = {
+  storeName: SEED.storeName,
+  items: [],
+  cart: [],
+  activeTab: 'verdura',
+  editMode: false,
+  searchQuery: '',
+};
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('es-AR');
+}
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      state.storeName = parsed.storeName || SEED.storeName;
+      state.items = parsed.items && parsed.items.length ? parsed.items : SEED.items;
+    } else {
+      state.storeName = SEED.storeName;
+      state.items = SEED.items;
+      persist();
+    }
+  } catch (e) {
+    state.storeName = SEED.storeName;
+    state.items = SEED.items;
+  }
+  render();
+}
+
+function persist() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ storeName: state.storeName, items: state.items }));
+  } catch (e) { /* best effort */ }
+}
+
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+function itemPrice(item) {
+  return (item.promoActive && item.promoPrice > 0) ? item.promoPrice : item.price;
+}
+
+function effectivePrice(item, amount) {
+  if (item.promoActive && item.promoPrice > 0) {
+    const minAmount = item.promoMinAmount || 0;
+    // For kg items: amount is in grams, promoMinAmount is in kg
+    // For unit items: amount and promoMinAmount are both in units
+    const comparable = item.saleType === 'kg' ? amount / 1000 : amount;
+    if (comparable >= minAmount) {
+      return item.promoPrice;
+    }
+  }
+  return item.price;
+}
+
+/* ---------- rendering ---------- */
+
+function render() {
+  const app = document.getElementById('app');
+  let visibleItems = state.items;
+  if (state.searchQuery) {
+    const q = state.searchQuery.toLowerCase();
+    visibleItems = visibleItems.filter(i => i.name.toLowerCase().includes(q));
+  } else {
+    visibleItems = visibleItems.filter(i => i.category === state.activeTab);
+  }
+
+  let tilesHtml = visibleItems.map(item => renderTile(item)).join('');
+  if (state.editMode) {
+    tilesHtml += `<button class="tile add-tile" onclick="openAddSheet()">
+      <div class="plus">+</div><div class="lbl">Agregar producto</div>
+    </button>`;
+  }
+  if (!state.editMode && visibleItems.length === 0) {
+    tilesHtml = `<div class="empty-msg" style="grid-column:1/-1">No hay productos en esta categoría todavía. Tocá el lápiz para agregar.</div>`;
+  }
+
+  const cartCount = state.cart.length;
+  const cartTotal = state.cart.reduce((s, l) => s + l.subtotal, 0);
+
+  app.innerHTML = `
+    <header>
+      <div class="header-row">
+        ${state.editMode
+      ? `<input class="store-name" id="storeNameInput" value="${escapeAttr(state.storeName)}" />`
+      : `<div class="store-name">${escapeHtml(state.storeName)}</div>`
+    }
+        <button class="icon-btn ${state.editMode ? 'on' : ''}" onclick="toggleEdit()">${state.editMode ? '✓' : '✏️'}</button>
+      </div>
+      <div class="tabs">
+        <button class="tab ${state.activeTab === 'verdura' ? 'active' : ''}" onclick="setTab('verdura')">Verduras</button>
+        <button class="tab ${state.activeTab === 'fruta' ? 'active' : ''}" onclick="setTab('fruta')">Frutas</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar producto..." value="${escapeAttr(state.searchQuery)}" oninput="setSearch(this.value)" />
+      </div>
+    </header>
+    <div class="grid">${tilesHtml}</div>
+  `;
+
+  if (state.editMode) {
+    const inp = document.getElementById('storeNameInput');
+    inp.addEventListener('change', (e) => { state.storeName = e.target.value || 'Mi Verdulería'; persist(); });
+  }
+
+  // cart bar
+  let bar = document.getElementById('cartBar');
+  if (bar) bar.remove();
+  if (cartCount > 0) {
+    const el = document.createElement('div');
+    el.className = 'cart-bar';
+    el.id = 'cartBar';
+    el.onclick = openCartSheet;
+    el.innerHTML = `<div class="left">🛒 ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}</div><div class="total">${fmt(cartTotal)}</div>`;
+    document.body.appendChild(el);
+  }
+}
+
+function renderTile(item) {
+  if (state.editMode) {
+    return `
+    <div class="tile editing">
+      <button class="trash" onclick="deleteItem('${item.id}')" title="Eliminar">🗑</button>
+      <input type="text" class="name-input" value="${escapeAttr(item.name)}" onchange="updateItem('${item.id}','name',this.value)" />
+      <div class="price-row">
+        <span>${item.saleType === 'kg' ? 'Precio/kg' : 'Precio/unidad'}</span>
+        <input type="number" min="0" value="${item.price}" onchange="updateItem('${item.id}','price',this.value)" />
+      </div>
+      <div class="price-row">
+        <span>Tipo</span>
+        <select onchange="updateItem('${item.id}','saleType',this.value)" style="padding:5px 6px;border-radius:8px;border:none;background:var(--kraft-dark);font-size:12.5px;">
+          <option value="kg" ${item.saleType === 'kg' ? 'selected' : ''}>Por kg</option>
+          <option value="unit" ${item.saleType === 'unit' ? 'selected' : ''}>Por unidad</option>
+        </select>
+      </div>
+      <div class="promo-toggle-row">
+        <span>Oferta</span>
+        <button class="switch ${item.promoActive ? 'on' : ''}" onclick="togglePromo('${item.id}')"><div class="knob"></div></button>
+      </div>
+      ${item.promoActive ? `
+      <div class="price-row">
+        <span>Precio oferta</span>
+        <input type="number" min="0" value="${item.promoPrice}" onchange="updateItem('${item.id}','promoPrice',this.value)" />
+      </div>
+      <div class="price-row">
+        <span>A partir de</span>
+        <input type="number" min="0" step="0.1" value="${item.promoMinAmount || 0}" onchange="updateItem('${item.id}','promoMinAmount',this.value)" style="width:60px;flex:none;" />
+        <span style="font-size:11px;">${item.saleType === 'kg' ? 'kg' : 'un'} (0=siempre)</span>
+      </div>` : ''}
+    </div>`;
+  }
+
+  const promo = item.promoActive && item.promoPrice > 0;
+  const unitLabel = item.saleType === 'kg' ? '/kg' : '/unidad';
+  let promoTag = 'OFERTA';
+  if (promo && item.promoMinAmount > 0) {
+    const minLabel = item.saleType === 'kg' ? item.promoMinAmount + ' kg' : item.promoMinAmount + 'u';
+    promoTag = 'LLEVANDO ' + minLabel;
+  }
+  return `
+    <button class="tile" onclick="openBuySheet('${item.id}')">
+      <div class="dot ${item.category}"></div>
+      <div class="emoji">${item.emoji || (item.category === 'fruta' ? '🍎' : '🥬')}</div>
+      <div class="name">${escapeHtml(item.name)}</div>
+      <div class="price-line">
+        ${promo ? `<div class="promo-tag">${promoTag}</div><div class="old-price">${fmt(item.price)}</div>` : ''}
+        <div class="price">${fmt(promo ? item.promoPrice : item.price)}<span class="unit-label"> ${unitLabel}</span></div>
+      </div>
+    </button>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+/* ---------- actions ---------- */
+
+function setSearch(q) {
+  state.searchQuery = q;
+  render();
+  // Keep focus on the input after re-render so user can keep typing
+  const inp = document.getElementById('searchInput');
+  if (inp) {
+    inp.focus();
+    // Move cursor to the end
+    const len = inp.value.length;
+    inp.setSelectionRange(len, len);
+  }
+}
+
+function setTab(t) { 
+  state.activeTab = t; 
+  state.searchQuery = ''; // Clear search when switching tabs
+  render(); 
+}
+
+function toggleEdit() {
+  state.editMode = !state.editMode;
+  render();
+}
+
+function updateItem(id, field, value) {
+  const item = state.items.find(i => i.id === id);
+  if (!item) return;
+  if (field === 'price' || field === 'promoPrice' || field === 'promoMinAmount') {
+    item[field] = Math.max(0, parseFloat(value) || 0);
+  } else {
+    item[field] = value;
+  }
+  persist();
+  render();
+}
+
+function togglePromo(id) {
+  const item = state.items.find(i => i.id === id);
+  if (!item) return;
+  item.promoActive = !item.promoActive;
+  if (item.promoActive && !item.promoPrice) { item.promoPrice = Math.round(item.price * 0.8); }
+  persist();
+  render();
+}
+
+function deleteItem(id) {
+  state.items = state.items.filter(i => i.id !== id);
+  persist();
+  render();
+}
+
+function openAddSheet() {
+  const overlay = document.getElementById('overlay');
+  const sheet = document.getElementById('sheet');
+  sheet.innerHTML = `
+    <div class="sheet-head">
+      <div>
+        <h2>Nuevo producto</h2>
+        <div class="sub">Cargalo una vez, después solo tocás y pesás</div>
+      </div>
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+    </div>
+    <div class="form-field">
+      <label>Nombre</label>
+      <input type="text" id="newName" placeholder="Ej: Acelga" />
+    </div>
+    <div class="two-col">
+      <div class="form-field">
+        <label>Categoría</label>
+        <select id="newCategory">
+          <option value="verdura">Verdura</option>
+          <option value="fruta">Fruta</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Se vende</label>
+        <select id="newSaleType">
+          <option value="kg">Por kg</option>
+          <option value="unit">Por unidad</option>
+        </select>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="form-field">
+        <label id="newPriceLabel">Precio por kg</label>
+        <input type="number" id="newPrice" min="0" placeholder="0" />
+      </div>
+      <div class="form-field">
+        <label>Emoji (opcional)</label>
+        <input type="text" id="newEmoji" placeholder="🥬" maxlength="2" />
+      </div>
+    </div>
+    <button class="primary-btn" onclick="confirmAddItem()">Agregar producto</button>
+  `;
+  document.getElementById('newSaleType').addEventListener('change', (e) => {
+    document.getElementById('newPriceLabel').textContent = e.target.value === 'kg' ? 'Precio por kg' : 'Precio por unidad';
+  });
+  showOverlay();
+}
+
+function confirmAddItem() {
+  const name = document.getElementById('newName').value.trim();
+  const category = document.getElementById('newCategory').value;
+  const saleType = document.getElementById('newSaleType').value;
+  const price = parseFloat(document.getElementById('newPrice').value) || 0;
+  const emoji = document.getElementById('newEmoji').value.trim();
+  if (!name || price <= 0) {
+    alert('Poné un nombre y un precio mayor a 0.');
+    return;
+  }
+  state.items.push({
+    id: uid(), name, category, saleType, price,
+    emoji: emoji || (category === 'fruta' ? '🍎' : '🥬'),
+    promoActive: false, promoPrice: Math.round(price * 0.8), promoMinAmount: 0
+  });
+  state.activeTab = category;
+  persist();
+  closeOverlay();
+  render();
+}
+
+let buyState = { itemId: null, amount: 0 };
+
+function openBuySheet(itemId) {
+  const item = state.items.find(i => i.id === itemId);
+  if (!item) return;
+  buyState = { itemId, amount: item.saleType === 'kg' ? 500 : 1 };
+  const price = effectivePrice(item, buyState.amount);
+
+  const overlay = document.getElementById('overlay');
+  const sheet = document.getElementById('sheet');
+
+  const quickOptions = item.saleType === 'kg'
+    ? [[100, '100 g'], [250, '250 g'], [500, '500 g'], [1000, '1 kg']]
+    : [[1, '1 un.'], [2, '2 un.'], [3, '3 un.'], [6, '6 un.']];
+
+  sheet.innerHTML = `
+    <div class="sheet-head">
+      <div>
+        <h2>${item.emoji} ${escapeHtml(item.name)}</h2>
+        <div class="sub" id="buySheetPriceSub">${fmt(price)} ${item.saleType === 'kg' ? 'por kg' : 'por unidad'}</div>
+      </div>
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+    </div>
+    <div class="qty-grid" id="qtyGrid">
+      ${quickOptions.map(([val, lbl]) => `<button class="qty-btn" data-val="${val}" onclick="setBuyAmount(${val})">${lbl}</button>`).join('')}
+    </div>
+    <div class="custom-row">
+      <label>${item.saleType === 'kg' ? 'Otro peso (g):' : 'Otra cantidad:'}</label>
+      <input type="number" id="customAmount" min="0" value="${buyState.amount}" oninput="setBuyAmount(parseFloat(this.value)||0, true)" />
+    </div>
+    <div class="subtotal-box">
+      <div class="lbl">Subtotal</div>
+      <div class="val" id="subtotalVal">${fmt(price * (buyState.amount / (item.saleType === 'kg' ? 1000 : 1)))}</div>
+    </div>
+    <button class="primary-btn" id="addBtn" onclick="confirmAddToCart()">Agregar al carrito</button>
+  `;
+  highlightQtyBtn();
+  showOverlay();
+}
+
+function setBuyAmount(val, fromCustom) {
+  buyState.amount = val;
+  const item = state.items.find(i => i.id === buyState.itemId);
+  const price = effectivePrice(item, val);
+  const factor = item.saleType === 'kg' ? val / 1000 : val;
+  document.getElementById('subtotalVal').textContent = fmt(price * factor);
+  document.getElementById('buySheetPriceSub').textContent = `${fmt(price)} ${item.saleType === 'kg' ? 'por kg' : 'por unidad'}`;
+  document.getElementById('addBtn').disabled = !(val > 0);
+  if (!fromCustom) {
+    document.getElementById('customAmount').value = val;
+  }
+  highlightQtyBtn();
+}
+
+function highlightQtyBtn() {
+  document.querySelectorAll('#qtyGrid .qty-btn').forEach(b => {
+    b.classList.toggle('active', parseFloat(b.dataset.val) === buyState.amount);
+  });
+}
+
+function confirmAddToCart() {
+  const item = state.items.find(i => i.id === buyState.itemId);
+  if (!item || buyState.amount <= 0) return;
+  const price = effectivePrice(item, buyState.amount);
+  const factor = item.saleType === 'kg' ? buyState.amount / 1000 : buyState.amount;
+  const subtotal = price * factor;
+  const amountLabel = item.saleType === 'kg'
+    ? (buyState.amount >= 1000 ? (buyState.amount / 1000) + ' kg' : buyState.amount + ' g')
+    : buyState.amount + ' un.';
+  state.cart.push({
+    lineId: uid(), itemId: item.id, name: item.name, emoji: item.emoji,
+    amountLabel, subtotal
+  });
+  closeOverlay();
+  render();
+}
+
+function openCartSheet() {
+  const overlay = document.getElementById('overlay');
+  const sheet = document.getElementById('sheet');
+  const total = state.cart.reduce((s, l) => s + l.subtotal, 0);
+  sheet.innerHTML = `
+    <div class="sheet-head">
+      <h2>Carrito</h2>
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+    </div>
+    <div id="cartLines">
+      ${state.cart.map(line => `
+        <div class="cart-line">
+          <div class="em">${line.emoji}</div>
+          <div class="info"><div class="n">${escapeHtml(line.name)}</div><div class="a">${line.amountLabel}</div></div>
+          <div class="sub">${fmt(line.subtotal)}</div>
+          <button class="del" onclick="removeLine('${line.lineId}')">🗑</button>
+        </div>`).join('')}
+    </div>
+    <div class="cart-total-row">
+      <div class="l">Total</div>
+      <div class="v">${fmt(total)}</div>
+    </div>
+    <button class="outline-btn" onclick="clearCart()">Vaciar carrito</button>
+  `;
+  showOverlay();
+}
+
+function removeLine(lineId) {
+  state.cart = state.cart.filter(l => l.lineId !== lineId);
+  if (state.cart.length === 0) { closeOverlay(); }
+  else { openCartSheet(); }
+  render();
+}
+
+function clearCart() {
+  state.cart = [];
+  closeOverlay();
+  render();
+}
+
+function showOverlay() { document.getElementById('overlay').classList.add('show'); }
+function closeOverlay() { document.getElementById('overlay').classList.remove('show'); }
+
+document.getElementById('overlay').addEventListener('click', (e) => {
+  if (e.target.id === 'overlay') closeOverlay();
+});
+
+/* ---------- swipe gestures ---------- */
+let touchStartX = 0;
+let touchEndX = 0;
+const swipeThreshold = 50;
+
+document.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+  // Ignore swipe if overlay is open (a sheet is open) or if an input is focused
+  if (document.getElementById('overlay').classList.contains('show')) return;
+  if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+  if (touchEndX < touchStartX - swipeThreshold) {
+    // Swiped left
+    if (state.activeTab === 'verdura') setTab('fruta');
+  } else if (touchEndX > touchStartX + swipeThreshold) {
+    // Swiped right
+    if (state.activeTab === 'fruta') setTab('verdura');
+  }
+}
+
+loadData();

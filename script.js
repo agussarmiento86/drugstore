@@ -59,7 +59,8 @@ const SEED = {
 let state = {
   storeName: SEED.storeName,
   items: [],
-  cart: [],
+  carts: [{ id: 'cart-init', name: 'Pedido 1', items: [] }],
+  activeCartId: 'cart-init',
   activeTab: 'verdura',
   editMode: false,
   searchQuery: '',
@@ -95,6 +96,10 @@ function persist() {
 }
 
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+function activeCart() {
+  return state.carts.find(c => c.id === state.activeCartId) || state.carts[0];
+}
 
 function itemPrice(item) {
   return (item.promoActive && item.promoPrice > 0) ? item.promoPrice : item.price;
@@ -135,8 +140,11 @@ function render() {
     tilesHtml = `<div class="empty-msg" style="grid-column:1/-1">No hay productos en esta categoría todavía. Tocá el lápiz para agregar.</div>`;
   }
 
-  const cartCount = state.cart.length;
-  const cartTotal = state.cart.reduce((s, l) => s + l.subtotal, 0);
+  const cart = activeCart();
+  const cartCount = cart.items.length;
+  const cartTotal = cart.items.reduce((s, l) => s + l.subtotal, 0);
+  const totalItemsAllCarts = state.carts.reduce((s, c) => s + c.items.length, 0);
+  const hasMultipleCarts = state.carts.length > 1;
 
   app.innerHTML = `
     <header>
@@ -153,6 +161,7 @@ function render() {
       </div>
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="🔍 Buscar producto..." value="${escapeAttr(state.searchQuery)}" oninput="setSearch(this.value)" />
+        ${state.searchQuery ? `<button class="clear-search" onclick="setSearch('')">✕</button>` : ''}
       </div>
     </header>
     <div class="grid">${tilesHtml}</div>
@@ -166,12 +175,26 @@ function render() {
   // cart bar
   let bar = document.getElementById('cartBar');
   if (bar) bar.remove();
-  if (cartCount > 0) {
+  if (totalItemsAllCarts > 0 || hasMultipleCarts) {
     const el = document.createElement('div');
     el.className = 'cart-bar';
     el.id = 'cartBar';
-    el.onclick = openCartSheet;
-    el.innerHTML = `<div class="left">🛒 ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}</div><div class="total">${fmt(cartTotal)}</div>`;
+    const cartTabsHtml = state.carts.map(c => {
+      const cnt = c.items.length;
+      const activeClass = c.id === state.activeCartId ? 'active' : '';
+      const badge = cnt > 0 ? ' <span class="cart-tab-badge">' + cnt + '</span>' : '';
+      return '<button class="cart-tab ' + activeClass + '" onclick="event.stopPropagation(); switchCart(\'' + c.id + '\')">'
+        + escapeHtml(c.name) + badge + '</button>';
+    }).join('');
+    el.innerHTML = `
+      <div class="cart-tabs-bar">
+        ${cartTabsHtml}
+        <button class="cart-tab-add" onclick="event.stopPropagation(); addNewCart()">+</button>
+      </div>
+      <div class="cart-summary" onclick="openCartSheet()">
+        <div class="left">🛒 ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}</div>
+        <div class="total">${fmt(cartTotal)}</div>
+      </div>`;
     document.body.appendChild(el);
   }
 }
@@ -426,7 +449,7 @@ function confirmAddToCart() {
   const amountLabel = item.saleType === 'kg'
     ? (buyState.amount >= 1000 ? (buyState.amount / 1000) + ' kg' : buyState.amount + ' g')
     : buyState.amount + ' un.';
-  state.cart.push({
+  activeCart().items.push({
     lineId: uid(), itemId: item.id, name: item.name, emoji: item.emoji,
     amountLabel, subtotal
   });
@@ -435,42 +458,112 @@ function confirmAddToCart() {
 }
 
 function openCartSheet() {
-  const overlay = document.getElementById('overlay');
   const sheet = document.getElementById('sheet');
-  const total = state.cart.reduce((s, l) => s + l.subtotal, 0);
-  sheet.innerHTML = `
-    <div class="sheet-head">
-      <h2>Carrito</h2>
-      <button class="close-x" onclick="closeOverlay()">✕</button>
-    </div>
-    <div id="cartLines">
-      ${state.cart.map(line => `
-        <div class="cart-line">
-          <div class="em">${line.emoji}</div>
-          <div class="info"><div class="n">${escapeHtml(line.name)}</div><div class="a">${line.amountLabel}</div></div>
-          <div class="sub">${fmt(line.subtotal)}</div>
-          <button class="del" onclick="removeLine('${line.lineId}')">🗑</button>
-        </div>`).join('')}
-    </div>
+  const cart = activeCart();
+  const total = cart.items.reduce((s, l) => s + l.subtotal, 0);
+
+  const tabsHtml = state.carts.map(c => {
+    const cnt = c.items.length;
+    const activeClass = c.id === state.activeCartId ? 'active' : '';
+    const countLabel = cnt > 0 ? ' (' + cnt + ')' : '';
+    return '<button class="sheet-cart-tab ' + activeClass + '" onclick="switchCart(\'' + c.id + '\'); openCartSheet();">'
+      + escapeHtml(c.name) + countLabel + '</button>';
+  }).join('');
+
+  const linesHtml = cart.items.map(line => `
+    <div class="cart-line">
+      <div class="em">${line.emoji}</div>
+      <div class="info"><div class="n">${escapeHtml(line.name)}</div><div class="a">${line.amountLabel}</div></div>
+      <div class="sub">${fmt(line.subtotal)}</div>
+      <button class="del" onclick="removeLine('${line.lineId}')">🗑</button>
+    </div>`).join('');
+
+  let totalHtml = '';
+  if (cart.items.length > 0) {
+    totalHtml = `
     <div class="cart-total-row">
       <div class="l">Total</div>
       <div class="v">${fmt(total)}</div>
     </div>
-    <button class="outline-btn" onclick="clearCart()">Vaciar carrito</button>
+    <button class="outline-btn" onclick="clearCart()">Vaciar carrito</button>`;
+  }
+
+  let deleteBtn = '';
+  if (state.carts.length > 1) {
+    deleteBtn = '<button class="outline-btn delete-cart-btn" onclick="deleteCart(\'' + cart.id + '\')">🗑 Eliminar &quot;' + escapeHtml(cart.name) + '&quot;</button>';
+  }
+
+  sheet.innerHTML = `
+    <div class="sheet-head">
+      <div><h2>🛒 Carritos</h2></div>
+      <button class="close-x" onclick="closeOverlay()">✕</button>
+    </div>
+    <div class="sheet-cart-tabs">
+      ${tabsHtml}
+      <button class="sheet-cart-tab add" onclick="addNewCart(); openCartSheet();">+ Nuevo</button>
+    </div>
+    <div class="cart-name-row">
+      <label>Nombre del pedido</label>
+      <input type="text" class="cart-name-input" value="${escapeAttr(cart.name)}" onchange="renameCart('${cart.id}', this.value); openCartSheet();" />
+    </div>
+    ${cart.items.length === 0 ? '<div class="empty-cart-msg">Este carrito está vacío.<br>Cerrá y agregá productos desde el catálogo.</div>' : ''}
+    <div id="cartLines">${linesHtml}</div>
+    ${totalHtml}
+    ${deleteBtn}
   `;
   showOverlay();
 }
 
 function removeLine(lineId) {
-  state.cart = state.cart.filter(l => l.lineId !== lineId);
-  if (state.cart.length === 0) { closeOverlay(); }
+  const cart = activeCart();
+  cart.items = cart.items.filter(l => l.lineId !== lineId);
+  if (cart.items.length === 0 && state.carts.length <= 1) { closeOverlay(); }
   else { openCartSheet(); }
   render();
 }
 
 function clearCart() {
-  state.cart = [];
-  closeOverlay();
+  activeCart().items = [];
+  if (state.carts.length <= 1) { closeOverlay(); }
+  else { openCartSheet(); }
+  render();
+}
+
+function addNewCart() {
+  const nums = state.carts.map(c => {
+    const m = c.name.match(/^Pedido (\d+)$/);
+    return m ? parseInt(m[1]) : 0;
+  });
+  const next = Math.max(...nums, state.carts.length) + 1;
+  const newCart = { id: uid(), name: 'Pedido ' + next, items: [] };
+  state.carts.push(newCart);
+  state.activeCartId = newCart.id;
+  render();
+}
+
+function switchCart(cartId) {
+  state.activeCartId = cartId;
+  render();
+}
+
+function renameCart(cartId, name) {
+  const cart = state.carts.find(c => c.id === cartId);
+  if (cart) cart.name = name.trim() || cart.name;
+  render();
+}
+
+function deleteCart(cartId) {
+  state.carts = state.carts.filter(c => c.id !== cartId);
+  if (state.carts.length === 0) {
+    const newCart = { id: uid(), name: 'Pedido 1', items: [] };
+    state.carts.push(newCart);
+    state.activeCartId = newCart.id;
+  } else if (state.activeCartId === cartId) {
+    state.activeCartId = state.carts[0].id;
+  }
+  const anyItems = state.carts.some(c => c.items.length > 0);
+  if (!anyItems && state.carts.length <= 1) { closeOverlay(); }
+  else { openCartSheet(); }
   render();
 }
 

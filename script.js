@@ -4,10 +4,10 @@ const SEED = {
   storeName: 'El Mercadito',
   items: [
     // Verduras
-    { id: '1', name: 'Tomate', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 3500, promoActive: false, promoPrice: 0 },
+    { id: '1', name: 'Tomate', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 3900, promoActive: false, promoPrice: 0 },
     { id: '2', name: 'Papa', emoji: '🥔', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
     { id: '3', name: 'Cebolla', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
-    { id: '4', name: 'Zanahoria', emoji: '🥕', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '4', name: 'Zanahoria', emoji: '🥕', category: 'verdura', saleType: 'kg', price: 2200, promoActive: false, promoPrice: 0 },
     { id: '5', name: 'Zapallo Brasilero', emoji: '🎃', category: 'verdura', saleType: 'kg', price: 2600, promoActive: false, promoPrice: 0 },
     { id: '6', name: 'Lechuga', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
     { id: '7', name: 'Choclo', emoji: '🌽', category: 'verdura', saleType: 'unit', price: 400, promoActive: false, promoPrice: 0 },
@@ -16,12 +16,12 @@ const SEED = {
     { id: '10', name: 'Cebolla de verdeo', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
     { id: '11', name: 'Espinaca', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
     { id: '12', name: 'Apio', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 500, promoActive: false, promoPrice: 0 },
-    { id: '13', name: 'Rucula', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 1200, promoActive: false, promoPrice: 0 },
-    { id: '14', name: 'Zapallito verde', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3500, promoActive: false, promoPrice: 0 },
+    { id: '13', name: 'Rucula', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
+    { id: '14', name: 'Zapallito verde', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
     { id: '15', name: 'Chaucha', emoji: '🫛', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
     { id: '16', name: 'Pimiento V', emoji: '🫑', category: 'verdura', saleType: 'kg', price: 5000, promoActive: false, promoPrice: 0 },
     { id: '17', name: 'Boniato', emoji: '🍠', category: 'verdura', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
-    { id: '18', name: 'Menta', emoji: '🌿', category: 'verdura', saleType: 'unit', price: 1200, promoActive: false, promoPrice: 0 },
+    { id: '18', name: 'Menta', emoji: '🌿', category: 'verdura', saleType: 'unit', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '19', name: 'Perejil', emoji: '🌿', category: 'verdura', saleType: 'kg', price: 300, promoActive: false, promoPrice: 0 },
     { id: '20', name: 'Zucchini', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
     { id: '21', name: 'Cebolla morada', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
@@ -39,20 +39,21 @@ const SEED = {
     { id: '33', name: 'Repollo', emoji: '🥬', category: 'verdura', saleType: 'unit', price: 2500, promoActive: false, promoPrice: 0 },
     { id: '34', name: 'Coliflor', emoji: '🥦', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
     { id: '35', name: 'Jengibre', emoji: '🫚', category: 'verdura', saleType: 'unit', price: 16000, promoActive: false, promoPrice: 0 },
+    { id: '48', name: 'Coles de Bruselas', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 4000, promoActive: false, promoPrice: 0 },
 
     // Frutas
     { id: '36', name: 'Manzana R', emoji: '🍎', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
     { id: '37', name: 'Banana', emoji: '🍌', category: 'fruta', saleType: 'kg', price: 5600, promoActive: false, promoPrice: 0 },
     { id: '38', name: 'Naranja', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '39', name: 'Limón', emoji: '🍋', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
-    { id: '40', name: 'Frutilla', emoji: '🍓', category: 'fruta', saleType: 'kg', price: 5100, promoActive: true, promoPrice: 5000, promoMinAmount: 2 },
+    { id: '40', name: 'Frutilla', emoji: '🍓', category: 'fruta', saleType: 'kg', price: 4500, promoActive: true, promoPrice: 4000, promoMinAmount: 2 },
     { id: '41', name: 'Kiwi', emoji: '🥝', category: 'fruta', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
     { id: '42', name: 'Manzana V', emoji: '🍏', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
     { id: '43', name: 'Mandarina', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '44', name: 'Pomelo', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '45', name: 'Pera', emoji: '🍐', category: 'fruta', saleType: 'kg', price: 4500, promoActive: false, promoPrice: 0 },
     { id: '46', name: 'Sandia', emoji: '🍉', category: 'fruta', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
-    { id: '47', name: 'Arandano', emoji: '🫐', category: 'fruta', saleType: 'unit', price: 4500, promoActive: false, promoPrice: 0 },
+    { id: '47', name: 'Arandano', emoji: '🫐', category: 'fruta', saleType: 'unit', price: 5500, promoActive: false, promoPrice: 0 },
   ]
 };
 
@@ -272,10 +273,10 @@ function setSearch(q) {
   }
 }
 
-function setTab(t) { 
-  state.activeTab = t; 
+function setTab(t) {
+  state.activeTab = t;
   state.searchQuery = ''; // Clear search when switching tabs
-  render(); 
+  render();
 }
 
 function toggleEdit() {
@@ -385,8 +386,8 @@ let buyState = { itemId: null, amount: 0 };
 function openBuySheet(itemId) {
   const item = state.items.find(i => i.id === itemId);
   if (!item) return;
-  buyState = { itemId, amount: item.saleType === 'kg' ? 500 : 1 };
-  const price = effectivePrice(item, buyState.amount);
+  buyState = { itemId, amount: 0 };
+  const price = effectivePrice(item, 0);
 
   const overlay = document.getElementById('overlay');
   const sheet = document.getElementById('sheet');
@@ -408,7 +409,18 @@ function openBuySheet(itemId) {
     </div>
     <div class="custom-row">
       <label>${item.saleType === 'kg' ? 'Otro peso (g):' : 'Otra cantidad:'}</label>
-      <input type="number" id="customAmount" min="0" value="${buyState.amount}" oninput="setBuyAmount(parseFloat(this.value)||0, true)" />
+      <input type="number" id="customAmount" min="0" placeholder="${item.saleType === 'kg' ? 'Ej: 500' : 'Ej: 2'}" oninput="setBuyAmount(parseFloat(this.value)||0, true)" />
+    </div>
+    <div class="money-converter">
+      <div class="converter-header">
+        <span class="converter-icon">💲</span>
+        <span class="converter-title">¿Cuánto lleva por $...?</span>
+      </div>
+      <div class="converter-input-row">
+        <span class="converter-prefix">$</span>
+        <input type="number" id="moneyInput" min="0" placeholder="Ej: 1000" oninput="calcFromMoney()" />
+      </div>
+      <div class="converter-result" id="converterResult"></div>
     </div>
     <div class="subtotal-box">
       <div class="lbl">Subtotal</div>
@@ -418,6 +430,64 @@ function openBuySheet(itemId) {
   `;
   highlightQtyBtn();
   showOverlay();
+}
+
+function calcFromMoney() {
+  const item = state.items.find(i => i.id === buyState.itemId);
+  if (!item) return;
+  const moneyInput = document.getElementById('moneyInput');
+  const resultEl = document.getElementById('converterResult');
+  const pesos = parseFloat(moneyInput.value) || 0;
+
+  if (pesos <= 0) {
+    resultEl.innerHTML = '';
+    return;
+  }
+
+  const price = effectivePrice(item, buyState.amount);
+
+  if (item.saleType === 'kg') {
+    // price is per kg, so pesos / price = kg
+    const kg = pesos / price;
+    const grams = Math.round(kg * 1000);
+    let label;
+    if (grams >= 1000) {
+      const kgRounded = (grams / 1000);
+      label = kgRounded % 1 === 0 ? `${kgRounded} kg` : `${kgRounded.toFixed(2)} kg`;
+    } else {
+      label = `${grams} g`;
+    }
+    resultEl.innerHTML = `<span class="converter-amount">${label}</span> <span class="converter-desc">de ${escapeHtml(item.name)}</span>`;
+  } else {
+    // price is per unit
+    const units = pesos / price;
+    const wholeUnits = Math.floor(units);
+    const remainder = Math.round((pesos - (wholeUnits * price)));
+    let label = `${wholeUnits} unidad${wholeUnits !== 1 ? 'es' : ''}`;
+    if (remainder > 0 && wholeUnits > 0) {
+      label += ` <span class="converter-change">(sobran ${fmt(remainder)})</span>`;
+    } else if (wholeUnits === 0) {
+      label = `No alcanza (mín. ${fmt(price)})`;
+    }
+    resultEl.innerHTML = `<span class="converter-amount">${label}</span> <span class="converter-desc">de ${escapeHtml(item.name)}</span>`;
+  }
+}
+
+function applyMoneyAmount() {
+  const item = state.items.find(i => i.id === buyState.itemId);
+  if (!item) return;
+  const pesos = parseFloat(document.getElementById('moneyInput').value) || 0;
+  if (pesos <= 0) return;
+
+  const price = effectivePrice(item, buyState.amount);
+
+  if (item.saleType === 'kg') {
+    const grams = Math.round((pesos / price) * 1000);
+    setBuyAmount(grams);
+  } else {
+    const units = Math.floor(pesos / price);
+    if (units > 0) setBuyAmount(units);
+  }
 }
 
 function setBuyAmount(val, fromCustom) {

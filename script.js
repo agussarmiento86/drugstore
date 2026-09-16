@@ -6,24 +6,24 @@ const SEED = {
     // Verduras
     { id: '1', name: 'Tomate', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 3900, promoActive: false, promoPrice: 0 },
     { id: '2', name: 'Papa', emoji: '🥔', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
-    { id: '3', name: 'Cebolla', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
-    { id: '4', name: 'Zanahoria', emoji: '🥕', category: 'verdura', saleType: 'kg', price: 2200, promoActive: false, promoPrice: 0 },
+    { id: '3', name: 'Cebolla', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2400, promoActive: false, promoPrice: 0 },
+    { id: '4', name: 'Zanahoria', emoji: '🥕', category: 'verdura', saleType: 'kg', price: 2400, promoActive: false, promoPrice: 0 },
     { id: '5', name: 'Zapallo Brasilero', emoji: '🎃', category: 'verdura', saleType: 'kg', price: 2600, promoActive: false, promoPrice: 0 },
     { id: '6', name: 'Lechuga', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
     { id: '7', name: 'Choclo', emoji: '🌽', category: 'verdura', saleType: 'unit', price: 400, promoActive: false, promoPrice: 0 },
     { id: '8', name: 'Acelga', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
     { id: '9', name: 'Palta', emoji: '🥑', category: 'verdura', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
     { id: '10', name: 'Cebolla de verdeo', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
-    { id: '11', name: 'Espinaca', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '11', name: 'Espinaca', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
     { id: '12', name: 'Apio', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 500, promoActive: false, promoPrice: 0 },
     { id: '13', name: 'Rucula', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
-    { id: '14', name: 'Zapallito verde', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '14', name: 'Zapallito verde', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
     { id: '15', name: 'Chaucha', emoji: '🫛', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
     { id: '16', name: 'Pimiento V', emoji: '🫑', category: 'verdura', saleType: 'kg', price: 5000, promoActive: false, promoPrice: 0 },
     { id: '17', name: 'Boniato', emoji: '🍠', category: 'verdura', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
     { id: '18', name: 'Menta', emoji: '🌿', category: 'verdura', saleType: 'unit', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '19', name: 'Perejil', emoji: '🌿', category: 'verdura', saleType: 'kg', price: 300, promoActive: false, promoPrice: 0 },
-    { id: '20', name: 'Zucchini', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
+    { id: '20', name: 'Zucchini', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
     { id: '21', name: 'Cebolla morada', emoji: '🧅', category: 'verdura', saleType: 'kg', price: 2800, promoActive: false, promoPrice: 0 },
     { id: '22', name: 'Ajo', emoji: '🧄', category: 'verdura', saleType: 'unit', price: 1200, promoActive: false, promoPrice: 0 },
     { id: '23', name: 'Lechuga hidroponica', emoji: '🥬', category: 'verdura', saleType: 'unit', price: 2000, promoActive: false, promoPrice: 0 },
@@ -33,8 +33,8 @@ const SEED = {
     { id: '27', name: 'Pepino', emoji: '🥒', category: 'verdura', saleType: 'kg', price: 3000, promoActive: false, promoPrice: 0 },
     { id: '28', name: 'Puerro', emoji: '🧅', category: 'verdura', saleType: 'unit', price: 500, promoActive: false, promoPrice: 0 },
     { id: '29', name: 'Berenjena', emoji: '🍆', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
-    { id: '30', name: 'Tomate Cherry', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 5000, promoActive: true, promoPrice: 500, promoMinAmount: 0.1 },
-    { id: '31', name: 'Broccoli', emoji: '🥦', category: 'verdura', saleType: 'unit', price: 2000, promoActive: false, promoPrice: 0 },
+    { id: '30', name: 'Tomate Cherry', emoji: '🍅', category: 'verdura', saleType: 'kg', price: 5000, promoActive: true, promoPrice: 500, promoMinAmount: 0 },
+    { id: '31', name: 'Broccoli', emoji: '🥦', category: 'verdura', saleType: 'unit', price: 6000, promoActive: false, promoPrice: 0 },
     { id: '32', name: 'Remolacha', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 7000, promoActive: false, promoPrice: 0 },
     { id: '33', name: 'Repollo', emoji: '🥬', category: 'verdura', saleType: 'unit', price: 2500, promoActive: false, promoPrice: 0 },
     { id: '34', name: 'Coliflor', emoji: '🥦', category: 'verdura', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
@@ -42,18 +42,40 @@ const SEED = {
     { id: '48', name: 'Coles de Bruselas', emoji: '🥬', category: 'verdura', saleType: 'kg', price: 4000, promoActive: false, promoPrice: 0 },
 
     // Frutas
-    { id: '36', name: 'Manzana R', emoji: '🍎', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
-    { id: '37', name: 'Banana', emoji: '🍌', category: 'fruta', saleType: 'kg', price: 5600, promoActive: false, promoPrice: 0 },
+    { id: '36', name: 'Manzana R', emoji: '🍎', category: 'fruta', saleType: 'kg', price: 4900, promoActive: false, promoPrice: 0 },
+    { id: '37', name: 'Banana', emoji: '🍌', category: 'fruta', saleType: 'kg', price: 5000, promoActive: false, promoPrice: 0 },
     { id: '38', name: 'Naranja', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '39', name: 'Limón', emoji: '🍋', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
-    { id: '40', name: 'Frutilla', emoji: '🍓', category: 'fruta', saleType: 'kg', price: 4500, promoActive: true, promoPrice: 4000, promoMinAmount: 2 },
+    { id: '40', name: 'Frutilla', emoji: '🍓', category: 'fruta', saleType: 'kg', price: 4000, promoActive: true, promoPrice: 8000, promoMinAmount: 2 },
     { id: '41', name: 'Kiwi', emoji: '🥝', category: 'fruta', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
-    { id: '42', name: 'Manzana V', emoji: '🍏', category: 'fruta', saleType: 'kg', price: 5500, promoActive: false, promoPrice: 0 },
+    { id: '42', name: 'Manzana V', emoji: '🍏', category: 'fruta', saleType: 'kg', price: 4900, promoActive: false, promoPrice: 0 },
     { id: '43', name: 'Mandarina', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
     { id: '44', name: 'Pomelo', emoji: '🍊', category: 'fruta', saleType: 'kg', price: 1500, promoActive: false, promoPrice: 0 },
-    { id: '45', name: 'Pera', emoji: '🍐', category: 'fruta', saleType: 'kg', price: 4500, promoActive: false, promoPrice: 0 },
-    { id: '46', name: 'Sandia', emoji: '🍉', category: 'fruta', saleType: 'kg', price: 2500, promoActive: false, promoPrice: 0 },
+    { id: '45', name: 'Pera', emoji: '🍐', category: 'fruta', saleType: 'kg', price: 4000, promoActive: false, promoPrice: 0 },
+    { id: '46', name: 'Sandia', emoji: '🍉', category: 'fruta', saleType: 'kg', price: 2000, promoActive: false, promoPrice: 0 },
     { id: '47', name: 'Arandano', emoji: '🫐', category: 'fruta', saleType: 'unit', price: 5500, promoActive: false, promoPrice: 0 },
+
+    // Fiambres
+    { id: '49', name: 'Jamón cocido', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 12000, promoActive: false, promoPrice: 0 },
+    { id: '50', name: 'Jamón crudo', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 18000, promoActive: false, promoPrice: 0 },
+    { id: '51', name: 'Queso cremoso', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 11000, promoActive: false, promoPrice: 0 },
+    { id: '52', name: 'Queso barra', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 9500, promoActive: false, promoPrice: 0 },
+    { id: '53', name: 'Salame', emoji: '🥓', category: 'fiambre', saleType: 'kg', price: 14000, promoActive: false, promoPrice: 0 },
+    { id: '54', name: 'Mortadela', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 8000, promoActive: false, promoPrice: 0 },
+    { id: '55', name: 'Queso dambo', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 10000, promoActive: false, promoPrice: 0 },
+    { id: '56', name: 'Paleta', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 10500, promoActive: false, promoPrice: 0 },
+    { id: '57', name: 'Queso colonia', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 9000, promoActive: false, promoPrice: 0 },
+    { id: '58', name: 'Bondiola', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 16000, promoActive: false, promoPrice: 0 },
+    { id: '59', name: 'Lomito ahumado', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 20000, promoActive: false, promoPrice: 0 },
+    { id: '60', name: 'Queso rallado', emoji: '🧀', category: 'fiambre', saleType: 'unit', price: 3500, promoActive: false, promoPrice: 0 },
+    { id: '61', name: 'Jamón Lario', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '62', name: 'Jamón Paladini', emoji: '🥩', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '63', name: 'Salame 66', emoji: '🥓', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '64', name: 'Salame X', emoji: '🥓', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '65', name: 'Queso Tybo La Paulina', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '66', name: 'Queso Tybo X', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '67', name: 'Cuartirolo La Paulina', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
+    { id: '68', name: 'Cuartirolo La Paulina Light', emoji: '🧀', category: 'fiambre', saleType: 'kg', price: 0, promoActive: false, promoPrice: 0 },
   ]
 };
 
@@ -103,7 +125,12 @@ function activeCart() {
 }
 
 function itemPrice(item) {
-  return (item.promoActive && item.promoPrice > 0) ? item.promoPrice : item.price;
+  if (item.promoActive && item.promoPrice > 0) {
+    // When minAmount > 0, promoPrice is the TOTAL for the bundle
+    if (item.promoMinAmount > 0) return item.promoPrice / item.promoMinAmount;
+    return item.promoPrice;
+  }
+  return item.price;
 }
 
 function effectivePrice(item, amount) {
@@ -113,6 +140,9 @@ function effectivePrice(item, amount) {
     // For unit items: amount and promoMinAmount are both in units
     const comparable = item.saleType === 'kg' ? amount / 1000 : amount;
     if (comparable >= minAmount) {
+      // When minAmount > 0, promoPrice is the TOTAL for the bundle
+      // e.g. "3 units for $3000" → per-unit price = $1000
+      if (minAmount > 0) return item.promoPrice / minAmount;
       return item.promoPrice;
     }
   }
@@ -159,6 +189,7 @@ function render() {
       <div class="tabs">
         <button class="tab ${state.activeTab === 'verdura' ? 'active' : ''}" onclick="setTab('verdura')">Verduras</button>
         <button class="tab ${state.activeTab === 'fruta' ? 'active' : ''}" onclick="setTab('fruta')">Frutas</button>
+        <button class="tab ${state.activeTab === 'fiambre' ? 'active' : ''}" onclick="setTab('fiambre')">Fiambres</button>
       </div>
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="🔍 Buscar producto..." value="${escapeAttr(state.searchQuery)}" oninput="setSearch(this.value)" />
@@ -223,7 +254,7 @@ function renderTile(item) {
       </div>
       ${item.promoActive ? `
       <div class="price-row">
-        <span>Precio oferta</span>
+        <span>${item.promoMinAmount > 0 ? 'Precio x ' + item.promoMinAmount + (item.saleType === 'kg' ? ' kg' : ' un') : 'Precio oferta'}</span>
         <input type="number" min="0" value="${item.promoPrice}" onchange="updateItem('${item.id}','promoPrice',this.value)" />
       </div>
       <div class="price-row">
@@ -237,18 +268,20 @@ function renderTile(item) {
   const promo = item.promoActive && item.promoPrice > 0;
   const unitLabel = item.saleType === 'kg' ? '/kg' : '/unidad';
   let promoTag = 'OFERTA';
+  let displayPrice = item.promoPrice;
   if (promo && item.promoMinAmount > 0) {
     const minLabel = item.saleType === 'kg' ? item.promoMinAmount + ' kg' : item.promoMinAmount + 'u';
-    promoTag = 'LLEVANDO ' + minLabel;
+    promoTag = minLabel + ' x ' + fmt(item.promoPrice);
+    displayPrice = item.promoPrice / item.promoMinAmount;
   }
   return `
     <button class="tile" onclick="openBuySheet('${item.id}')">
       <div class="dot ${item.category}"></div>
-      <div class="emoji">${item.emoji || (item.category === 'fruta' ? '🍎' : '🥬')}</div>
+      <div class="emoji">${item.emoji || (item.category === 'fruta' ? '🍎' : item.category === 'fiambre' ? '🥩' : '🥬')}</div>
       <div class="name">${escapeHtml(item.name)}</div>
       <div class="price-line">
         ${promo ? `<div class="promo-tag">${promoTag}</div><div class="old-price">${fmt(item.price)}</div>` : ''}
-        <div class="price">${fmt(promo ? item.promoPrice : item.price)}<span class="unit-label"> ${unitLabel}</span></div>
+        <div class="price">${fmt(promo ? displayPrice : item.price)}<span class="unit-label"> ${unitLabel}</span></div>
       </div>
     </button>`;
 }
@@ -332,6 +365,7 @@ function openAddSheet() {
         <select id="newCategory">
           <option value="verdura">Verdura</option>
           <option value="fruta">Fruta</option>
+          <option value="fiambre">Fiambre</option>
         </select>
       </div>
       <div class="form-field">
@@ -372,7 +406,7 @@ function confirmAddItem() {
   }
   state.items.push({
     id: uid(), name, category, saleType, price,
-    emoji: emoji || (category === 'fruta' ? '🍎' : '🥬'),
+    emoji: emoji || (category === 'fruta' ? '🍎' : category === 'fiambre' ? '🥩' : '🥬'),
     promoActive: false, promoPrice: Math.round(price * 0.8), promoMinAmount: 0
   });
   state.activeTab = category;
@@ -663,12 +697,14 @@ function handleSwipe() {
   if (document.getElementById('overlay').classList.contains('show')) return;
   if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
 
+  const tabs = ['verdura', 'fruta', 'fiambre'];
+  const idx = tabs.indexOf(state.activeTab);
   if (touchEndX < touchStartX - swipeThreshold) {
     // Swiped left
-    if (state.activeTab === 'verdura') setTab('fruta');
+    if (idx < tabs.length - 1) setTab(tabs[idx + 1]);
   } else if (touchEndX > touchStartX + swipeThreshold) {
     // Swiped right
-    if (state.activeTab === 'fruta') setTab('verdura');
+    if (idx > 0) setTab(tabs[idx - 1]);
   }
 }
 

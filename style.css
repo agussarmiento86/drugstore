@@ -132,6 +132,7 @@
   }
   .dot.verdura{background:var(--leaf-dark);}
   .dot.fruta{background:var(--citrus);}
+  .dot.fiambre{background:var(--tomato);}
   .tile .emoji{font-size:26px;margin-bottom:4px;}
   .tile .name{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.2;}
   .tile .price-line{margin-top:auto;padding-top:8px;}
